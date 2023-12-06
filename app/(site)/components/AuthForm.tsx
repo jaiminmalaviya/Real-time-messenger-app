@@ -15,8 +15,16 @@ import Button from '@/app/components/Button'
 type Variant = 'LOGIN' | 'REGISTER'
 
 function AuthForm() {
+   const session = useSession()
+   const router = useRouter()
    const [variant, setVariant] = useState<Variant>('LOGIN')
    const [isLoading, setIsLoading] = useState(false)
+
+   useEffect(() => {
+      if (session?.status === 'authenticated') {
+         router.push('/users')
+      }
+   }, [session?.status, router])
 
    const toggleVariant = useCallback(() => {
       if (variant === 'LOGIN') {
@@ -44,6 +52,7 @@ function AuthForm() {
       if (variant === 'REGISTER') {
          axios
             .post('/api/register', data)
+            .then(() => signIn('credentials', data))
             .catch(() => toast.error('Something went wrong!'))
             .finally(() => setIsLoading(false))
       }
@@ -57,6 +66,7 @@ function AuthForm() {
 
                if (callback?.ok) {
                   toast.success('Logged in!')
+                  router.push('/users')
                }
             })
             .finally(() => setIsLoading(false))
