@@ -71,7 +71,6 @@ function AuthForm() {
           if (callback?.error) {
             toast.error("Invalid credentials");
           }
-
           if (callback?.ok) {
             toast.success("Logged in!");
             router.push("/users");
