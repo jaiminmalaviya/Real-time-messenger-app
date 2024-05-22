@@ -22,7 +22,12 @@ const Avatar: React.FC<AvatarProps> = ({ user }) => {
         md:h-11 
         md:w-11
       ">
-        <Image fill src={user?.image || "/images/placeholder.jpg"} alt="Avatar" />
+        <Image
+          fill
+          src={user?.image || "/images/placeholder.jpg"}
+          alt="Avatar"
+          className="object-cover"
+        />
       </div>
       <span
         className="
