@@ -3,14 +3,16 @@
 import React, { Fragment } from "react";
 import { Dialog, DialogPanel, Transition, TransitionChild } from "@headlessui/react";
 import { IoClose } from "react-icons/io5";
+import clsx from "clsx";
 
 interface ModalProps {
   isOpen?: boolean;
   onClose: () => void;
   children: React.ReactNode;
+  isImageModal?: boolean;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, isImageModal }) => {
   return (
     <Transition
       show={isOpen}
@@ -57,7 +59,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
               <DialogPanel
-                className="
+                className={clsx(
+                  `
                   relative 
                   transform 
                   overflow-hidden 
@@ -72,9 +75,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
                   w-full
                   sm:my-8 
                   sm:w-full 
-                  sm:max-w-lg 
                   sm:p-6
-                ">
+                  `,
+                  isImageModal ? "sm:max-w-[70vw] md:max-w-[60vw] lg:max-w-[50vw]" : "sm:max-w-lg"
+                )}>
                 <div
                   className="
                     absolute 

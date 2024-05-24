@@ -17,14 +17,16 @@ const ImageModal: React.FC<ImageModalProps> = ({ isOpen, onClose, src }) => {
   return (
     <Modal
       isOpen={isOpen}
-      onClose={onClose}>
-      <div className="w-80 h-80">
-        <Image
-          className="object-contain"
-          fill
-          alt="Image"
-          src={src}
-        />
+      onClose={onClose}
+      isImageModal={true}>
+      <div className="w-full flex items-center justify-center">
+        <div className="w-full max-h-[50vh] overflow-auto">
+          <img
+            className="w-full"
+            alt="Image"
+            src={src}
+          />
+        </div>
       </div>
     </Modal>
   );
