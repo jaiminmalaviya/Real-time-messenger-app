@@ -30,6 +30,7 @@ const Avatar: React.FC<AvatarProps> = ({ user }) => {
           fill
           src={user?.image || "/images/placeholder.jpg"}
           alt="Avatar"
+          className="object-cover"
         />
       </div>
       {isActive ? (

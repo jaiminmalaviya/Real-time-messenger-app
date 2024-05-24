@@ -42,7 +42,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({ isOpen, onClose, data }) 
     }
 
     return isActive ? "Active" : "Offline";
-  }, [data]);
+  }, [data, isActive]);
 
   return (
     <>

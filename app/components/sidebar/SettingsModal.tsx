@@ -23,8 +23,6 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, currentU
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
-  console.log(currentUser, "&TEST_CURRENT_USER");
-
   const {
     register,
     handleSubmit,
@@ -102,7 +100,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, currentU
                   <Image
                     width="48"
                     height="48"
-                    className="rounded-full h-14 w-14  object-cover"
+                    className="rounded-full h-14 w-14 object-cover"
                     src={image || currentUser?.image || "/images/placeholder.jpg"}
                     alt="Avatar"
                   />
