@@ -77,7 +77,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, isImageModal }
                   sm:w-full 
                   sm:p-6
                   `,
-                  isImageModal ? "sm:max-w-[70vw] md:max-w-[60vw] lg:max-w-[50vw]" : "sm:max-w-lg"
+                  isImageModal ? "sm:max-w-[70vw] md:max-w-[60vw] lg:max-w-[600px]" : "sm:max-w-lg"
                 )}>
                 <div
                   className="

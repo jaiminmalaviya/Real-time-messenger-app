@@ -63,6 +63,8 @@ const MessageBox: React.FC<MessageBoxProps> = ({ data, isLast }) => {
                 hover:scale-110 
                 transition 
                 translate
+                max-h-80
+                max-w-72
               "
             />
           ) : (

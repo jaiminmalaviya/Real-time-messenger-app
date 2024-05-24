@@ -20,7 +20,7 @@ const ImageModal: React.FC<ImageModalProps> = ({ isOpen, onClose, src }) => {
       onClose={onClose}
       isImageModal={true}>
       <div className="w-full flex items-center justify-center">
-        <div className="w-full max-h-[50vh] overflow-auto">
+        <div className="w-full max-h-[70vh] overflow-auto">
           <img
             className="w-full"
             alt="Image"
